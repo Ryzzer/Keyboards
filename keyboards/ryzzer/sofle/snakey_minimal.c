@@ -1,5 +1,5 @@
 /* Copyright
- *   2021 solartempest
+ *   2026 Ryzzer
  *   2021 Luna code adapted from HellSingCoder and Jackasaur
  *   2021 QMK
  *
@@ -176,11 +176,18 @@
 
 	#if !defined(OLED_NO_SLAVE) && !defined(OLED_NO_MASTER)
 		static void print_logo_narrow(void) {
+			oled_set_cursor(0,1);
+			oled_write("R   S", false);
+			oled_set_cursor(0,2);
+			oled_write("Y   O", false);
+			oled_set_cursor(0,3);
+			oled_write("Z   F", false);
 			oled_set_cursor(0,4);
-			oled_write("RYZ", false);
+			oled_write("Z   L", false);
 			oled_set_cursor(0,5);
-			oled_write("ZER", false);
-		 
+			oled_write("E   E", false);
+			oled_set_cursor(0,6);
+			oled_write("R", false);
 			#ifdef OLED_LOGO
 				render_logo(0,9); //Not defining this in config.h will save space (+112).
 			#endif

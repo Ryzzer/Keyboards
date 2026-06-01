@@ -1,5 +1,5 @@
 /* Copyright
- *   2021 solartempest
+ *   2026 Ryzzer
  *   2021 QMK
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,19 +17,18 @@
 */
 
 #pragma once
-//#include "config_common.h"
 
 // USB Device descriptor parameters
 #define VENDOR_ID       0xFC32
 #define PRODUCT_ID      0x1287 //Original is 0x0287 but we do not want to load default VIA keymap as it has errors for the bottom row
 #define DEVICE_VER      0x0002
 #define MANUFACTURER    "Keyhive"
-#define PRODUCT         "Ryzzer_Sofle" //New unique name
-#define DESCRIPTION     Rose version of the Sofle
+#define PRODUCT         "Ryzzer_Sofle_v2_RGB" //New unique name
 
 // Set which side is master
 #define MASTER_LEFT
-//#define EE_HANDS //Use this if EEPROM setting is desired instead
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 // Key Matrix Settings
 // Rows are doubled-up for split keyboards. Added extra column for rotary encoder VIA mapping.
@@ -58,17 +57,12 @@
 	#define COMBO_TERM 400 //Default combo time is 200ms. This is the time delay allowed between deleting each whole word with shift-backspace.
 #endif
 
-#define D2SKATE_MACRO_ENABLE	//Enable Destiny 2 hunter skate macro (+224)
-
 // Disabled to save space
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
 #define NO_ACTION_ONESHOT		//Save 244 bytes (-244).
 #define NO_RESET				//Save 40 bytes (-40).
 #define LAYER_STATE_8BIT		//For less than 8 bits worth of layers.
 #undef LOCKING_SUPPORT_ENABLE	//For MX lock keys only.
 #undef LOCKING_RESYNC_ENABLE	//For MX lock keys only.
-//#define SUPER_ALT_TAB_ENABLE	//Enable super alt tab custom keycode(+178).
 
 // Encoder support
 // Change from ENCODERS_PAD_A to ENCODER_A_PINS
@@ -104,34 +98,6 @@
 	#endif
 	//#define SPLIT_MODS_ENABLE			//Keep on master to save space (+138).
 #endif
-
-// Haptic feedback settings
-#ifdef HAPTIC_ENABLE
-	#define FB_ERM_LRA 1
-	#define FB_BRAKEFACTOR 2	// For 1x:0, 2x:1, 3x:2, 4x:3, 6x:4, 8x:5, 16x:6, Disable Braking:7
-	#define FB_LOOPGAIN 0 		// For  Low:0, Medium:1, High:2, Very High:3
-
-	// Refer to datasheet for the optimal setting for specific motors.
-	#define RATED_VOLTAGE 2 //2Vrms per ELV1411A datasheet, which is the LRA used for the Pimoroni Haptic Bzzz driver DRV2605.
-	#define V_PEAK 2.0		//Per QMK docs.
-	#define V_RMS 2.0 		//Per ELV1411A datasheet.
-	#define F_LRA 150 		//Resonant frequency per ELV1411A datasheet.
-	
-	//#define HAPTIC_OFF_IN_LOW_POWER 1 //Turn off haptic feedback while sleeping (+54).
-	#define NO_HAPTIC_PUNCTUATION
-	#define NO_HAPTIC_ALPHA
-	#define NO_HAPTIC_MOD
-	//#define NO_HAPTIC_NUMERIC
-	//#define NO_HAPTIC_NAV
-#endif
-
-// Pimoroni trackball settings
-#ifdef POINTING_DEVICE_ENABLE
-	//#define PIMORONI_TRACKBALL_INTERVAL_MS 6 //Default is 8ms
-	#define PIMORONI_TRACKBALL_ROTATE //Change according to your particular installed trackball orientation.
-	#define PIMORONI_TRACKBALL_INVERT_Y
-	#define PIMORONI_TRACKBALL_INVERT_X
-#endif               
 
 // RGB settings
 #ifdef RGBLIGHT_ENABLE
