@@ -50,7 +50,7 @@ Build guide and log is available here: [SofleKeyboard build log/guide](https://j
 Compile with the command below:
 
 ```sh
-qmk compile -kb solartempest/sofle -km via
+qmk compile -kb ryzzer/sofle -km via
 ```
 
 ## Flashing
@@ -59,7 +59,7 @@ Flash using the correct command below or use QMK Toolbox. Specifying side during
 
 ```sh
 # for pro micro-based builds
-qmk flash -kb solartempest/sofle -km via
+qmk flash -kb ryzzer/sofle -km via
 ```
 
 These commands can be mixed if, for example, you have an Elite C on the left and a pro micro on the right.
