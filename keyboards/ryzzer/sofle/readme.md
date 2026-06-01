@@ -47,6 +47,8 @@ Build guide and log is available here: [SofleKeyboard build log/guide](https://j
 
 # Compiling
 
+Make sure you're on qmk_firmware 0.26.0
+
 Compile with the command below:
 
 ```sh
